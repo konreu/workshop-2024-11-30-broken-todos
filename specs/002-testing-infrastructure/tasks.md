@@ -102,7 +102,7 @@
 
 ### Implementation for User Story 3
 
-- [ ] T016 [US3] Create main E2E test file in e2e/todo-flow.spec.ts with:
+- [x] T016 [US3] Create main E2E test file in e2e/todo-flow.spec.ts with:
   - beforeEach that clears database using clearTodos()
   - Test: home page loads and shows todo list
   - Test: can add a new todo (type, submit, verify appears)
