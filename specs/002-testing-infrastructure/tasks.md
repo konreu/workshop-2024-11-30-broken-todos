@@ -160,11 +160,11 @@
 
 **Purpose**: Validation, cleanup, and documentation finalization
 
-- [ ] T020 Run `npm run test:coverage` and verify coverage report generates in coverage/
-- [ ] T021 Verify all tests complete in <30 seconds total (NFR-001: unit <10s)
-- [ ] T022 Run quickstart.md validation - follow guide to write a new test
-- [ ] T023 Verify database mock stays in sync with schema (mockInsert/Select/Update/Delete match Drizzle patterns)
-- [ ] T024 Final code review: ensure test files follow Clarity Over Cleverness principle with explanatory comments
+- [x] T020 Run `npm run test:coverage` and verify coverage report generates in coverage/
+- [x] T021 Verify all tests complete in <30 seconds total (NFR-001: unit <10s)
+- [x] T022 Run quickstart.md validation - follow guide to write a new test
+- [x] T023 Verify database mock stays in sync with schema (mockInsert/Select/Update/Delete match Drizzle patterns)
+- [x] T024 Final code review: ensure test files follow Clarity Over Cleverness principle with explanatory comments
 
 ---
 
