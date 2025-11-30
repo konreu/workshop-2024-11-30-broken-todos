@@ -123,12 +123,12 @@
 
 ### Implementation for User Story 4
 
-- [ ] T017 [P] [US4] Update AGENTS.md with TDD workflow section including:
+- [x] T017 [P] [US4] Update AGENTS.md with TDD workflow section including:
   - Red-Green-Refactor cycle explanation
   - How to run tests in watch mode (`npm run test:watch`)
   - Example of writing a failing test first
   - When to use unit vs component vs E2E tests
-- [ ] T018 [P] [US4] Update constitution.md (.specify/memory/constitution.md) with:
+- [x] T018 [P] [US4] Update constitution.md (.specify/memory/constitution.md) with:
   - New principle "VI. Test-First Development"
   - Rationale for TDD in learning environment
   - Integration with existing principles

@@ -68,6 +68,18 @@ Every feature and bug exists to teach something specific.
 
 **Rationale**: This isn't a production app—it's a curriculum. Every decision should serve the learning objectives.
 
+### VI. Test-First Development
+
+Tests MUST be written before implementation code (TDD approach).
+
+- New features MUST have a failing test before any implementation code is written
+- Server Actions MUST have unit tests that mock the database layer
+- React Components MUST have component tests verifying user interactions
+- Critical user flows MUST have end-to-end tests using Playwright
+- Tests MUST serve as executable documentation—readable by humans, not just machines
+
+**Rationale**: In a learning environment, tests are doubly valuable. They catch bugs AND teach expected behavior. Writing tests first forces you to think about _what_ the code should do before worrying about _how_. This mirrors the workshop philosophy of "think before typing."
+
 ## Technology Stack
 
 **Runtime & Framework**:
