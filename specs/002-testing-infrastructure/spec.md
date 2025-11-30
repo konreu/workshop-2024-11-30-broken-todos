@@ -172,7 +172,7 @@ Tests should automatically run when a pull request is opened, ensuring no broken
 9. **E2E server startup**: Playwright uses `webServer` config to auto-start the dev server before tests and shut it down after—no manual server start required
 10. **E2E test data setup**: Tests call seed functions directly in `beforeEach`/`beforeAll` hooks (e.g., `await seedTodos([...])`)—explicit, readable, keeps setup close to test code
 11. **E2E test isolation**: Each test clears the database in `beforeEach` before seeding its own data—ensures test isolation with a known clean state
-12. **Flaky test policy**: No automatic retries—flaky tests should be fixed, not hidden. In a learning environment, we want developers to understand *why* tests fail
+12. **Flaky test policy**: No automatic retries—flaky tests should be fixed, not hidden. In a learning environment, we want developers to understand _why_ tests fail
 13. **CI browser coverage**: Chromium only—keeps CI fast and simple; cross-browser testing adds complexity without pedagogical value
 
 ## Technology Choices
