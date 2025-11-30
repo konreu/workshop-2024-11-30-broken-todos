@@ -165,24 +165,26 @@ Phase 7 (Polish)       → Depends on all stories complete
 
 ### User Story Dependencies
 
-| Story | Depends On | Can Parallel With |
-|-------|------------|-------------------|
-| US1 (View) | Phase 2 complete | - |
-| US2 (Toggle) | US1 complete | US3, US4 |
-| US3 (Add) | US1 complete | US2, US4 |
-| US4 (Remove) | US1 complete | US2, US3 |
+| Story        | Depends On       | Can Parallel With |
+| ------------ | ---------------- | ----------------- |
+| US1 (View)   | Phase 2 complete | -                 |
+| US2 (Toggle) | US1 complete     | US3, US4          |
+| US3 (Add)    | US1 complete     | US2, US4          |
+| US4 (Remove) | US1 complete     | US2, US3          |
 
 ### Parallel Opportunities
 
 **Phase 2 (all [P] tasks can run together):**
+
 ```
 T001, T002, T003, T004, T005, T006 → All test file creation in parallel
 ```
 
 **After US1 complete (US2, US3, US4 can run in parallel):**
+
 ```
 Developer A: T019-T023 (US2: Toggle)
-Developer B: T024-T027 (US3: Add)  
+Developer B: T024-T027 (US3: Add)
 Developer C: T028-T032 (US4: Remove)
 ```
 
@@ -210,16 +212,16 @@ Developer C: T028-T032 (US4: Remove)
 
 ## Summary
 
-| Phase | Tasks | Purpose |
-|-------|-------|---------|
-| Setup | 0 | None needed |
+| Phase        | Tasks          | Purpose                    |
+| ------------ | -------------- | -------------------------- |
+| Setup        | 0              | None needed                |
 | Foundational | 12 (T001-T012) | Create TodoCount component |
-| US1: View | 6 (T013-T018) | Integrate into TodoList |
-| US2: Toggle | 5 (T019-T023) | E2E tests for toggle |
-| US3: Add | 4 (T024-T027) | E2E tests for add |
-| US4: Remove | 5 (T028-T032) | E2E tests for remove |
-| Polish | 5 (T033-T037) | Final validation |
-| **Total** | **37 tasks** | |
+| US1: View    | 6 (T013-T018)  | Integrate into TodoList    |
+| US2: Toggle  | 5 (T019-T023)  | E2E tests for toggle       |
+| US3: Add     | 4 (T024-T027)  | E2E tests for add          |
+| US4: Remove  | 5 (T028-T032)  | E2E tests for remove       |
+| Polish       | 5 (T033-T037)  | Final validation           |
+| **Total**    | **37 tasks**   |                            |
 
 **Parallel opportunities**: 11 tasks can run in parallel  
 **Independent test criteria**: Each user story has browser validation step  

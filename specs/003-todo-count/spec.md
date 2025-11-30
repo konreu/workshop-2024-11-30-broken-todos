@@ -7,7 +7,7 @@
 
 ## User Scenarios & Testing _(mandatory)_
 
-### User Story 1 - View Completion Progress (Priority: P1)
+### User Story 1 - View Completed Count (Priority: P1)
 
 As a user managing my tasks, I want to see how many todos I've completed out of the total so I can track my progress at a glance.
 
@@ -49,7 +49,7 @@ As a user adding new tasks, I want the count to update when I add a new todo, so
 **Acceptance Scenarios**:
 
 1. **Given** I have 3 todos showing "1 of 3 completed", **When** I add a new todo, **Then** the display updates to "1 of 4 completed"
-2. **Given** I have 0 todos showing "0 of 0 completed", **When** I add a new todo, **Then** the display updates to "0 of 1 completed"
+2. **Given** I have 0 todos showing "Add your first todo!", **When** I add a new todo, **Then** the display updates to "0 of 1 completed"
 
 ---
 
@@ -82,9 +82,10 @@ As a user removing tasks, I want the count to update when I delete a todo, so I 
 - **FR-002**: System MUST update the count immediately when a todo is marked complete or incomplete (optimistic update)
 - **FR-003**: System MUST update the count immediately when a new todo is added
 - **FR-004**: System MUST update the count immediately when a todo is removed
-- **FR-005**: System MUST display the count above the todo list, in the header area below the "My Todos" title
+- **FR-005**: System MUST display the count inside the todo list card, at the top above the todo items
 - **FR-006**: System MUST display "Add your first todo!" instead of the count when there are zero todos
 - **FR-007**: System MUST calculate the count from the optimistic todo state to ensure real-time accuracy
+- **FR-008**: System MUST NOT change the count when todos are reordered (drag-and-drop does not affect completion status)
 
 ### Key Entities
 
@@ -95,16 +96,16 @@ As a user removing tasks, I want the count to update when I delete a todo, so I 
 
 ### Measurable Outcomes
 
-- **SC-001**: Users can see their completion progress within 1 second of page load
+- **SC-001**: Users can see their completed count within 1 second of page load
 - **SC-002**: Count updates appear instantly (within 100ms) after any todo action (add/remove/toggle)
 - **SC-003**: Count accuracy is 100% - always matches the actual number of completed and total todos displayed
-- **SC-004**: Feature works across all supported browsers without visual glitches
-- **SC-005**: Screen reader users can access the count via a live region that politely announces changes
+- **SC-004**: Feature works across Chromium-based browsers (Chrome, Edge) without visual glitches
+- **SC-005**: Screen reader users can access the count via a live region (`aria-live="polite"`, `role="status"`) that politely announces changes
 
 ## Clarifications
 
 ### Session 2025-11-30
 
-- Q: Where should the todo count be displayed in the UI? → A: Above the list, in the header area (below "My Todos" title)
+- Q: Where should the todo count be displayed in the UI? → A: Inside the todo list card, at the top above the todo items (rendered in `todo-list.tsx` component)
 - Q: What should be displayed when there are zero todos? → A: Show alternative text "Add your first todo!" instead of the count
 - Q: How should screen reader users access the count information? → A: Live region with polite announcements (aria-live="polite")
