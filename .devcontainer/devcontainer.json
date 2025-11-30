@@ -2,7 +2,8 @@
   "name": "VeryHumanAI - Workshop 2025-11-30 - Broken Todos",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
   },
   "customizations": {
     "vscode": {
@@ -29,7 +30,7 @@
       }
     }
   },
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
