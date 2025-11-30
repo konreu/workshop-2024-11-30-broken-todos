@@ -7,8 +7,8 @@
 
 | Status | Feature                                                | Difficulty | Workshop Role              |
 | ------ | ------------------------------------------------------ | ---------- | -------------------------- |
-| [ ]    | **Drag to reorder** - Manual ordering with persistence | Mid-Senior | 🔍 Conroy debugs live      |
-| [ ]    | **Todo count** - "X of Y completed" display            | Junior     | 🛠️ Participants debug + PR |
+| [!]    | **Drag to reorder** - Manual ordering with persistence | Mid-Senior | 🔍 Conroy debugs live      |
+| [!]    | **Todo count** - "X of Y completed" display            | Junior     | 🛠️ Participants debug + PR |
 | [ ]    | **Edit todos** - Click to edit inline                  | Junior-Mid | 🏗️ Build together (live)   |
 | [ ]    | **Show/hide completed** - Filter toggle                | Junior-Mid | 📚 Homework                |
 | [ ]    | **Search todos** - Filter by text                      | Mid        | 📚 Homework                |
