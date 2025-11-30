@@ -1,5 +1,34 @@
 # CLAUDE.md
 
+---
+
+## ⚠️ GIT SAFETY RULES (CRITICAL) ⚠️
+
+**These rules are NON-NEGOTIABLE. Violating them can cause data loss.**
+
+### 🚫 NEVER Force Push
+
+**NEVER run `git push --force` or `git push --force-with-lease`.**
+
+- Always let the Human perform force pushes themselves
+- Force pushes rewrite remote history and can wipe out others' work
+- If a force push is needed, explain why and let the Human execute it
+
+### 🛡️ Always Create Backup Branches Before Rebasing
+
+Before ANY rebase operation, create a timestamped backup branch:
+
+```bash
+# Format: {branch-name}_backup_YYYYMMDD_HHMM
+git checkout -b my-feature_backup_20251130_1430
+git checkout my-feature
+git rebase main
+```
+
+This ensures you can always restore from the backup if the rebase goes wrong.
+
+---
+
 ## Project Context
 
 This is "Flight Simulator"—a learning environment for teaching developers to reason about code in the age of AI. The human you're working with is Conroy, a senior full-stack engineer building this as a prototype for a VeryHumanAI workshop tomorrow (Sunday, Nov 30, 12-2pm ET).

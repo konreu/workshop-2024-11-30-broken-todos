@@ -5,6 +5,73 @@
 This is a learning environment. The human you're working with may be new to
 programming. Prioritize clarity over cleverness.
 
+---
+
+## ⚠️ GIT SAFETY RULES (CRITICAL) ⚠️
+
+**These rules are NON-NEGOTIABLE. Violating them can cause data loss.**
+
+### 🚫 NEVER Force Push
+
+**NEVER run `git push --force` or `git push --force-with-lease`.**
+
+- Always let the Human perform force pushes themselves
+- Force pushes rewrite remote history and can wipe out others' work
+- If a force push is needed, explain why and let the Human execute it
+
+### 🛡️ Always Create Backup Branches Before Rebasing
+
+Before ANY rebase operation, create a timestamped backup branch:
+
+```bash
+# Format: {branch-name}_backup_YYYYMMDD_HHMM
+git checkout -b my-feature_backup_20251130_1430
+git checkout my-feature
+git rebase main
+```
+
+This ensures you can always restore from the backup if the rebase goes wrong.
+
+### ✅ Safe Git Operations (AI can do these)
+
+- `git status`, `git log`, `git diff`
+- `git add`, `git commit`
+- `git push` (regular push, NOT force)
+- `git fetch`, `git pull` (when no conflicts expected)
+- `git branch`, `git checkout`, `git switch`
+- Creating backup branches
+
+### ⛔ Dangerous Git Operations (Human must do these)
+
+- `git push --force` / `git push --force-with-lease`
+- `git reset --hard`
+- `git clean -fd`
+- `git rebase` (AI can do this, but MUST create backup first)
+- Deleting remote branches
+
+### 🧪 Pre-Commit Checklist
+
+**ALWAYS run lint and tests before committing.** Never break CI/CD.
+
+```bash
+npm run lint && npm run test:unit
+```
+
+### 🔧 When Debugging/Fixing Bugs
+
+**Get HITL (Human-in-the-Loop) confirmation before committing.**
+
+Don't just make changes and assume "this probably fixes it" → commit → push.
+Instead: make changes → ask Human to verify → if fixed, commit/push.
+
+### 🆕 When Building Net-New Features
+
+**OK to commit incrementally** as you complete each todo step.
+QA with Human at the end of the feature, not after every commit.
+This keeps progress visible and avoids commits piling up locally.
+
+---
+
 ## Working Style
 
 - **Think out loud.** Explain your reasoning before writing code.
