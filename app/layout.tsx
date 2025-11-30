@@ -8,8 +8,11 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Turso Starter",
-  description: "Get started with Next.js and Turso",
+  title: "Todo App",
+  description: "A simple todo application for tracking tasks",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
