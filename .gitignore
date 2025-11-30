@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+playwright-report/
+test-results/
 
 # next.js
 /.next/
@@ -40,4 +42,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local SQLite databases
 local.db
+test.db
+test-ci.db
+*.db

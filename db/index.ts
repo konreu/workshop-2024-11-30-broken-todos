@@ -1,10 +1,13 @@
-import { drizzle } from 'drizzle-orm/libsql';
-import { createClient } from '@libsql/client';
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
 
-const client = createClient({ 
-  url: process.env.TURSO_DATABASE_URL!, 
-  authToken: process.env.TURSO_AUTH_TOKEN!
-});
+const url = process.env.TURSO_DATABASE_URL!;
+
+// Support both remote Turso (https://) and local SQLite (file:)
+// Local files don't need auth tokens
+const client = createClient(
+  url.startsWith("file:") ? { url } : { url, authToken: process.env.TURSO_AUTH_TOKEN! }
+);
 
 const db = drizzle({ client });
 
