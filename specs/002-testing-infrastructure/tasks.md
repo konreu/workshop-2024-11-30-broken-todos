@@ -54,7 +54,7 @@
 
 ### Implementation for User Story 1
 
-- [X] T012 [US1] Create server action tests in app/**tests**/actions.test.ts with tests for:
+- [x] T012 [US1] Create server action tests in app/**tests**/actions.test.ts with tests for:
   - addTodo() inserts with correct description from FormData
   - removeTodoAction() deletes with correct ID
   - toggleTodoAction() updates with correct ID
@@ -74,18 +74,18 @@
 
 ### Implementation for User Story 2
 
-- [ ] T013 [P] [US2] Create Todo component tests in app/**tests**/todo.test.tsx with tests for:
+- [x] T013 [P] [US2] Create Todo component tests in app/**tests**/todo.test.tsx with tests for:
   - Renders todo description text
   - Displays line-through styling when completed: true
   - Clicking checkbox calls toggleTodoAction with correct ID
   - Clicking delete button calls removeTodoAction with correct ID
   - Has no accessibility violations (jest-axe)
   - ✓ Use waitFor() for useTransition async state updates
-- [ ] T014 [P] [US2] Create TodoList component tests in app/**tests**/todo-list.test.tsx with tests for:
+- [x] T014 [P] [US2] Create TodoList component tests in app/**tests**/todo-list.test.tsx with tests for:
   - Renders list of todo items
   - Renders empty state when no todos
   - Has no accessibility violations (jest-axe)
-- [ ] T015 [P] [US2] Create Form component tests in app/**tests**/form.test.tsx with tests for:
+- [x] T015 [P] [US2] Create Form component tests in app/**tests**/form.test.tsx with tests for:
   - Renders input and submit button
   - Submitting form calls addTodo with FormData containing description
   - Has no accessibility violations (jest-axe)
