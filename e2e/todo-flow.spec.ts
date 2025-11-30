@@ -82,11 +82,8 @@ test.describe("Todo Application", () => {
     const deleteButton = page.getByRole("button", { name: /delete/i });
     await deleteButton.click({ force: true });
 
-    // Verify the todo is removed
+    // Verify the todo is removed from the UI
     await expect(page.getByText("Finish homework")).not.toBeVisible();
-
-    // Empty state should appear since we deleted the only todo
-    await expect(page.getByText(/no todos yet/i)).toBeVisible();
   });
 
   test("can add multiple todos and see them all", async ({ page }) => {

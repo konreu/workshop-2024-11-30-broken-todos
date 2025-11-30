@@ -1,4 +1,5 @@
 import { Todos } from "./todos";
+import { TodoCount } from "./todo-count";
 
 export default async function Page() {
   return (
@@ -10,6 +11,7 @@ export default async function Page() {
         </div>
         <h1 className="text-4xl font-extrabold tracking-tight text-slate-800">My Todos</h1>
         <p className="text-lg text-slate-500">Stay organized, get things done</p>
+        <TodoCount />
       </div>
 
       {/* Todo List Card */}

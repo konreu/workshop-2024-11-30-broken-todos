@@ -47,3 +47,6 @@ local.db
 test.db
 test-ci.db
 *.db
+
+# temporary files
+/tmp/

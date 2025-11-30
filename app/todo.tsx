@@ -26,6 +26,10 @@ export function Todo({
   const [showConfetti, setShowConfetti] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
+  // Local state for immediate UI feedback
+  const [isCompleted, setIsCompleted] = useState(item.completed);
+  const [isDeleted, setIsDeleted] = useState(false);
+
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: item.id,
   });
@@ -54,13 +58,17 @@ export function Todo({
   // Handle toggle and trigger confetti if todo becomes completed
   const handleToggle = async () => {
     // If the todo is currently not completed, toggling will complete it
-    if (!item.completed) {
+    if (!isCompleted) {
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000); // Hide confetti after 3 seconds
     }
 
-    startTransition(async () => {
-      await toggleTodoAction(item.id);
+    // Update local state immediately for smooth UX
+    setIsCompleted(!isCompleted);
+
+    // Persist to server in background
+    startTransition(() => {
+      toggleTodoAction(item.id);
     });
   };
 
@@ -114,14 +122,23 @@ export function Todo({
   };
 
   const handleRemove = async () => {
-    startTransition(async () => {
-      await removeTodoAction(item.id);
+    // Update local state immediately for smooth UX
+    setIsDeleted(true);
+
+    // Persist to server in background
+    startTransition(() => {
+      removeTodoAction(item.id);
     });
   };
 
   // Extract role from attributes to avoid setting role="button" on <li>
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { role, ...restAttributes } = attributes;
+
+  // Don't render if deleted locally
+  if (isDeleted) {
+    return null;
+  }
 
   return (
     <li
@@ -147,15 +164,15 @@ export function Todo({
         {/* Custom Checkbox */}
         <button
           className={`flex h-6 w-6 items-center justify-center rounded-full border-2 transition-all duration-200 ${
-            item.completed
+            isCompleted
               ? "border-indigo-500 bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md shadow-indigo-200"
               : "border-slate-300 hover:border-indigo-400 hover:shadow-sm"
           } ${isPending ? "opacity-50" : ""} `}
           onClick={handleToggle}
           disabled={isPending}
-          aria-label={item.completed ? "Mark as incomplete" : "Mark as complete"}
+          aria-label={isCompleted ? "Mark as incomplete" : "Mark as complete"}
         >
-          {item.completed && (
+          {isCompleted && (
             <svg
               className="animate-check h-3.5 w-3.5 text-white"
               fill="none"
@@ -171,7 +188,7 @@ export function Todo({
         {/* Todo Text */}
         <span
           className={`flex-1 text-base transition-all duration-200 ${
-            item.completed ? "text-slate-400 line-through" : "text-slate-700"
+            isCompleted ? "text-slate-400 line-through" : "text-slate-700"
           } `}
         >
           {item.description}
