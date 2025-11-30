@@ -8,17 +8,18 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss",
         "christian-kohler.path-intellisense",
-        "GitHub.copilot-chat",
-        "rphlmr.vscode-drizzle-orm",
-        "qwtel.sqlite-viewer",
         "cweijan.vscode-database-client2",
-        "ms-vsliveshare.vsliveshare",
+        "dbaeumer.vscode-eslint",
         "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot-chat",
+        "github.vscode-github-actions",
         "mhutchie.git-graph",
+        "ms-vsliveshare.vsliveshare",
+        "qwtel.sqlite-viewer",
+        "rphlmr.vscode-drizzle-orm",
         "streetsidesoftware.code-spell-checker"
       ],
       "settings": {
